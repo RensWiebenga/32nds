@@ -15,6 +15,10 @@ body {
 	border:2px solid #fff;
 }
 
+.greenText {
+	color:#0ab3a9;
+}
+
 .wrapper {
 	height:100%;
 	max-width:1100px;
@@ -25,7 +29,12 @@ body {
 	position: relative;
 }
 
-.header > .title {
+a {
+	text-decoration:none;
+	color:#eee;
+}
+
+.header > a >  .title {
 	font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
 	font-size: 7em;
     width: 90%;
@@ -36,17 +45,17 @@ body {
     line-height: 80%;
 }
 
-.header > img {
+.header img {
 	position:absolute;
 	width:100px;
 	margin-top:45px;
 }
 
-.header > img.left {
+.header  img.left {
 	left:30px;
 }
 
-.header > img.right {
+.header img.right {
 	right:30px;
 }
 
