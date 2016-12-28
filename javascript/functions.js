@@ -12,7 +12,7 @@
 	bord of vragen - ook in settings
 	overzetten naar 32s.nl
 	// ander vormig bord //
-	vormgeving vragen
+	// vormgeving vragen //
 */
 
 
