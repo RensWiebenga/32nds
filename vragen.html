@@ -9,11 +9,9 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 	<body class="greenCard">
-		
-		
-		
+
 		<div class="answerContainer hidden">
-		<div class="nextBtn hidden">Volgende kaart kiezen</div>
+		<div class="nextBtn btn hidden">Volgende kaart kiezen</div>
 			<div class="card">
 				
 				<div class="answers">
@@ -21,18 +19,32 @@
 				
 			</div>
 		</div>
-		<div class="chooseBtn">Kies een kleur</div>
+
 
 		<div class="cardChoiceContainer ">
-			<div class="resetBtn">Reset geschiedenis</div>
-			<div class="greenBtn"></div>
-			<div class="redBtn"></div>
+			
+			<div class="greenBtn btn"> Groen</div>
+			<div class="redBtn btn">Rood</div>
+			<div class="resetBtn btn">Reset geschiedenis</div>
+			<a href="index.html" class="deviceChoice btn wide">
+				Wissel van device
+			</a>
 			
 		</div>
-		<div class="ready hidden">
+		<div class="ready hidden btn">
 			START
 		</div>
+		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+		  ga('create', 'UA-89555276-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
 			
 		
 	</body>

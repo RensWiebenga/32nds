@@ -1,17 +1,22 @@
 /* todo
 	
-	//iconen op tiles//
+	// iconen op tiles//
 	// start-einde vormgeven //
 	// inner glow op tiles? //
 	// vormgeving title //
 	// hue aanpassen //
 	// naam op muntje //
 	// title fix font-size //
-
 	// validation van 2 spelers //
-	bord of vragen
-	overzetten naar 32s.nl
-	ander vormig bord
+	// bord of vragen - ook in settings //
+	// overzetten naar 32s.nl //
+	// ander vormig bord //
+	// vormgeving vragen //
+	// woorden checken //
+	// uitleg van spel //
+	// meer tutorial achtige shizzle //
+	// hoogte check voor mobile e.d. responsiveness //
+	// Woorden toevoegen //
 */
 
 
@@ -87,6 +92,11 @@ $(document).ready(function(){
 		$('.overlay').removeClass('hidden');
 	});
 
+	$('body').on( "click", ".information", function() {
+		$('.ExplanationOverlay').removeClass('hidden');
+		$('.overlay2').removeClass('hidden');
+	});
+
 
 	$('.startCounter').click(function(){
 		$('.counter').removeClass('hidden');
@@ -132,16 +142,23 @@ $(document).ready(function(){
 					$('.counter').addClass('hidden');
 					$('.overlay').addClass('hidden');
 				});
+				
 		}, 1000);
 		
 	});
 	
+	$('body').on( "click", ".ExplanationOverlay .closeBtn", function() {
+
+		$('.ExplanationOverlay').addClass('hidden');
+		$('.overlay2').addClass('hidden');
+	});
+
 	var boardhtml = "";
 	
-	var greenTiles = [1, 3,7,9,13,15,19,23,27,37,45,49,51,55,57,61,63 ];
-	var redTiles = [2, 4,6,8,10,18,22,24,28,36,40,42,46,54,56,58,60,62];
+	var greenTiles = [1,3,9,14,18,20,21,25,27,40,41,47,54,58,60,61,63,69];
+	var redTiles = [2,8,10,11,13,17,24,26,30,31,44,50,51,53,57,62,68,70];
 
-	for(var x = 1; x<64; x++){
+	for(var x = 1; x<71; x++){
 
 		boardhtml += '<div class="tile tile'+x;
 
@@ -161,12 +178,12 @@ $(document).ready(function(){
 
 		boardhtml +=  '>';
 		var imgurl = "bg"+ Math.floor(Math.random()*22)+".png";
-		if(x != 40 && x != 42){
+		if(x != 44 && x != 47){
 			boardhtml += '<img src="images/'+imgurl+'"/>';
-		} else if (x==40)
+		} else if (x==44)
 		{
 			boardhtml += '<div class="startEinde">START</div>';
-		} else if (x==42)
+		} else if (x==47)
 		{
 			boardhtml += '<div class="startEinde">EINDE</div>';
 		}
