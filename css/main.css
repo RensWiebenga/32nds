@@ -29,6 +29,20 @@ body {
 	position: relative;
 }
 
+.ExplanationOverlay {
+	min-width:600px;
+	position:absolute;
+	z-index:150;
+	width:90%;
+	left:5%;
+	min-height:768px;
+	background:rgba(17,17,17,0.9);
+}
+
+.ExplanationOverlay .explanationImg {
+	width:100%;
+}
+
 a {
 	text-decoration:none;
 	color:#eee;
@@ -84,22 +98,21 @@ a {
 
 .pageChooser a {
 	position:absolute;
-	width:30%;
-	height: 300px;
+	width:45%;
 	margin-top:5%;
 	cursor:pointer;
 	text-align:center;
 	text-decoration:none;
 	color:#fff;
-	font-size:30px;
-	
+	font-size:5vw;
 }
 
 
 .pageChooser a:nth-child(1) {
-	left:20%;
+	left:5%;
 	background:#b11f24;
-	border-right:1px solid #111;
+	border-right:3px solid #111;
+	box-sizing: border-box;
 	border-top-left-radius:30px;
 	border-bottom-left-radius:30px;
 }
@@ -109,19 +122,19 @@ a {
 }
 
 .pageChooser a:nth-child(1) img {
-	width:70%;
-	left:15%;
-	top:8%;
-	position:absolute;
+	width: 70%;
+	margin:10% auto;
+	position:relative;
 
 }
 
 .pageChooser a:nth-child(2) {
 	left:50%;
 	background:#08948c;
-	border-left:1px solid #111;
+	border-left:3px solid #111;
 	border-top-right-radius:30px;
 	border-bottom-right-radius:30px;
+	box-sizing: border-box;
 }
 
 .pageChooser a:nth-child(2):hover {
@@ -129,18 +142,30 @@ a {
 }
 
 .pageChooser a:nth-child(2) img {
-	width:30%;
-	left:35%;
-	top:15%;
-	position:absolute;
+	width: 70%;
+	margin:10% auto;
+	position:relative;
 
 }
 
+.tips {
+	width:90%;
+	margin:5% 5% 0% 5%;
+}
+
+.explanation {
+	font-size:15px;
+	margin: 5% 10%;
+	text-align:left;
+	height:20%;
+	height: 100px;
+}
+
 .pageChoice {
-	position:absolute;
-	bottom:30px;
+	position:relative;
 	width:100%;
 	text-align:center;
+	margin-bottom:10%;
 }
 
 .boardContainer {
@@ -174,14 +199,51 @@ a {
 
 .options {
 	position: absolute;
-    top: 10%;
-    left: 46%;
+    top: 5%;
+    left: 40%;
     max-width: 8%;
     max-height: 8%;
 }
 
+
+
 .options img {
 	width:100%;
+}
+
+.information {
+	position: absolute;
+    top: 5%;
+    left: 53%;
+    max-width: 8%;
+    max-height: 8%;
+	cursor:pointer;
+}
+
+.information img {
+	width:100%;
+}
+
+.information img:hover, .deviceChoice img:hover  {
+	-webkit-filter: hue-rotate(180deg); /* Safari */
+    filter: hue-rotate(180deg);
+}
+
+.deviceChoice {
+	position: absolute;
+	width: 10%;
+	left: 45%;
+	top: 18%;
+}
+
+.wide {
+	left:52%;
+	width:48%;
+	
+}
+
+.deviceChoice img {
+	width: 100%;
 }
 
 .roleDice {
@@ -215,12 +277,12 @@ a {
 	top:-30px;
 }
 
-.closeBtn:hover {
+.closeBtn:hover, .wide:hover {
 	-webkit-filter: hue-rotate(180deg); /* Safari */
     filter: hue-rotate(180deg);
 }
 
-.overlay {
+.overlay, .overlay2 {
 	position:absolute;
 	width:97%;
 	left:3%;
@@ -617,7 +679,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .nextBtn{
 	margin-top:20px;
-	width:80%;
+	width: 100%;
 	margin:20px auto 20px auto;
 	height:40px;
 	border-sizing:border-box;
@@ -629,26 +691,23 @@ input[type=range]:focus::-ms-fill-upper {
 	cursor:pointer;
 }
 
-.resetBtn {
+.resetBtn, .wide {
 	position:absolute;
-	width:80%;
-	margin:20px auto 20px auto;
 	height:40px;
 	border-sizing:border-box;
 	padding-top:18px;
 	border-radius:30px;
 	top:100%;
-
 	text-align:center;
 	color:#fff;
 	cursor:pointer;
-}
-
-.resetBtn {
-	width:100%;
+	width:48%;
 	margin:20px 0px;
 	background:#b11f24;
 }
+
+
+
 
 
 .chooseBtn {
@@ -665,13 +724,14 @@ input[type=range]:focus::-ms-fill-upper {
 	background:#b11f24;
 }
 
-.nextBtn:hover, .resetBtn:hover {
+.nextBtn:hover, .resetBtn:hover, .redBtn:hover, .greenBtn:hover, .ready:hover{
 	-webkit-filter: hue-rotate(180deg); /* Safari */
     filter: hue-rotate(180deg);
 }
 
 .inactive {
 	background:#aaa;
+	border:2px solid #aaa;
 }
 
 .redCard .answerContainer{
@@ -691,49 +751,56 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .answerContainer {
+	
 	width:80%;
-	height:auto;
+	height:70%;;
 	position: absolute;
-	top:25%;
+	top: 10%;
 	box-sizing:border-box;
 	left: 10%;
+
 }
 
 .cardChoiceContainer, .ready {
-	width:80%;
-	height:auto;
+	width: 80%;
+	height: 70%;
 	position: absolute;
-	top:25%;
-	box-sizing:border-box;
-	left:10%;
+	top: 10%;
+	box-sizing: border-box;
+	left: 10%;
 }
 
 .greenBtn {
 	float:left;
 	width:50%;
-	height:200px;
+	height:100%;
 	background:#0ab3a9;
 	border-top-left-radius: 30px;
 	border-bottom-left-radius: 30px;
 	border-right: 1px solid #fff;
 	box-sizing:border-box;
+	text-align:center;
+	font-size:40px;
+	padding-top:30%;
+	padding-top:100px;
 }
 .redBtn {
 	float:right;
 	width:50%;
-	height:200px;
+	height:100%;
 	background:#b11f24;
 	border-top-right-radius: 30px;
 	border-bottom-right-radius: 30px;
 	border-left: 1px solid #fff;
 	box-sizing:border-box;
+	font-size:40px;
+	text-align:center;
+	padding-top:100px;
 }
 
 .card {
-	width:80%;
+	width: 100%;
 	margin:0 auto;
-
-	
 }
 
 .answerContainer .title {
@@ -757,14 +824,14 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .answers li {
-	margin:20px;
-	font-size:2vw;
-	box-sizing:border-box;
+	margin: 4%;
+	font-size: 2vw;
+	box-sizing: border-box;
 }
 
 .ready {
 	background:#ee2934;
-	height:300px;
+	height: 70%;
 	text-align:center;
 	font-size:60px;
 	box-sizing:border-box;

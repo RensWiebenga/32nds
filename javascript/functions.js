@@ -7,12 +7,16 @@
 	// hue aanpassen //
 	// naam op muntje //
 	// title fix font-size //
-
 	// validation van 2 spelers //
-	bord of vragen - ook in settings
-	overzetten naar 32s.nl
+	// bord of vragen - ook in settings //
+	// overzetten naar 32s.nl //
 	// ander vormig bord //
 	// vormgeving vragen //
+	// woorden checken //
+	// uitleg van spel //
+	// meer tutorial achtige shizzle //
+	// hoogte check voor mobile e.d. responsiveness //
+	// Woorden toevoegen //
 */
 
 
@@ -88,6 +92,11 @@ $(document).ready(function(){
 		$('.overlay').removeClass('hidden');
 	});
 
+	$('body').on( "click", ".information", function() {
+		$('.ExplanationOverlay').removeClass('hidden');
+		$('.overlay2').removeClass('hidden');
+	});
+
 
 	$('.startCounter').click(function(){
 		$('.counter').removeClass('hidden');
@@ -133,10 +142,17 @@ $(document).ready(function(){
 					$('.counter').addClass('hidden');
 					$('.overlay').addClass('hidden');
 				});
+				
 		}, 1000);
 		
 	});
 	
+	$('body').on( "click", ".ExplanationOverlay .closeBtn", function() {
+
+		$('.ExplanationOverlay').addClass('hidden');
+		$('.overlay2').addClass('hidden');
+	});
+
 	var boardhtml = "";
 	
 	var greenTiles = [1,3,9,14,18,20,21,25,27,40,41,47,54,58,60,61,63,69];
