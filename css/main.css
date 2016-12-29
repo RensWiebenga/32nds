@@ -50,18 +50,18 @@ a {
 
 .header > a >  .title {
 	font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
-	font-size: 7em;
+	font-size: 6em;
     width: 90%;
     text-align: center;
     margin: 20px auto 20px auto;
     color: #ee2934;
     font-weight: 700;
-    line-height: 80%;
+    line-height: 70%;
 }
 
 .header img {
 	position:absolute;
-	width:100px;
+	width:80px;
 	margin-top:45px;
 }
 
